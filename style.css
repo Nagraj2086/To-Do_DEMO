@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TO-DO-LIST</title>
-    <style>
         body{
             /* background-color: rgba(0, 0, 255, 0.3); */
-            background: url(./images/wall.jpeg);
+            background: url(wall.jpeg);
             background-size: cover;
             background-repeat: no-repeat;
             width: 100%;
@@ -65,51 +58,3 @@
             flex-direction: column;
             gap: 1rem;
         }
-    </style>
-</head>
-<body>
-    <div class="todo">
-        <span class="todohead">TO-DO-LIST</span>
-        <div class="tasks">
-            <input type="text" placeholder="Enter Your Task.." class="taskinput">
-            <button class="addtask" onclick="addTask()">ADD</button>
-        </div>
-        <ul class="list">
-
-        </ul>
-    </div>
-    <script>
-
-        function addTask(){
-            let taskinput=document.querySelector(".taskinput")
-            let taskValue=taskinput.value.trim()
-            
-            if(taskValue===""){
-                alert("There Was a Great Saying---\n\n Dnot Skip From Life\nDo Some Work And Be Productivie\n\n--NagRaju Kummari")
-            }else{
-                let li=document.createElement("li")
-            li.textContent=taskValue
-            li.style.textTransform="capitalize"
-            li.style.position="relative"
-            document.querySelector(".list").appendChild(li)
-            taskinput.value=""
-
-            let reee=document.createElement("span")
-            reee.innerText="✔️"
-            li.appendChild(reee)
-            reee.style.position="absolute"
-            reee.style.left="225px"
-
-                reee.style.cursor="pointer"
-            reee.onclick=()=>{
-                li.remove()
-
-            }
-            }
-
-            
-        }
-
-    </script>
-</body>
-</html>
