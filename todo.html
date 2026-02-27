@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO-DO-LIST</title>
+    <style>
+        body{
+            /* background-color: rgba(0, 0, 255, 0.3); */
+            background: url(./images/wall.jpeg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+
+        }
+        .todo{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* justify-content: center; */
+            margin-top: 18px;
+            gap: 0.8rem;
+        }
+        .todohead{
+            font-size: 24px;
+            font-weight: 600;
+        }
+        .taskinput{
+            padding: 10px 10px;
+            width: 200px;
+            height: 15px;
+            border: none;
+            box-shadow:0 2px 4px rgba(0, 0, 0, 0.4);
+        }
+        .addtask{
+            background-color: dodgerblue;
+            border: none;
+            padding: 10px 15px;
+            color: white;
+            font-weight: 600;
+            box-shadow:0 2px 4px rgba(0, 0, 0, 0.4);
+        }
+        .addtask:hover{
+            box-shadow:0 2px 4px rgba(0, 0, 0, 0.9);
+            cursor: pointer;
+        }
+        li{
+            list-style-type: auto;
+            background-color: dodgerblue;
+            padding: 10px 15px ;
+            width: 233px;
+            /* 165px */
+            margin-right: 21px;
+            /* 100px */
+            font-size: 18px;
+            font-weight: 500;
+            /* display: flex; */
+            /* justify-content: space-between; */
+        }
+        .list{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="todo">
+        <span class="todohead">TO-DO-LIST</span>
+        <div class="tasks">
+            <input type="text" placeholder="Enter Your Task.." class="taskinput">
+            <button class="addtask" onclick="addTask()">ADD</button>
+        </div>
+        <ul class="list">
+
+        </ul>
+    </div>
+    <script>
+
+        function addTask(){
+            let taskinput=document.querySelector(".taskinput")
+            let taskValue=taskinput.value.trim()
+            
+            if(taskValue===""){
+                alert("There Was a Great Saying---\n\n Dnot Skip From Life\nDo Some Work And Be Productivie\n\n--NagRaju Kummari")
+            }else{
+                let li=document.createElement("li")
+            li.textContent=taskValue
+            li.style.textTransform="capitalize"
+            li.style.position="relative"
+            document.querySelector(".list").appendChild(li)
+            taskinput.value=""
+
+            let reee=document.createElement("span")
+            reee.innerText="✔️"
+            li.appendChild(reee)
+            reee.style.position="absolute"
+            reee.style.left="225px"
+
+                reee.style.cursor="pointer"
+            reee.onclick=()=>{
+                li.remove()
+
+            }
+            }
+
+            
+        }
+
+    </script>
+</body>
+</html>
